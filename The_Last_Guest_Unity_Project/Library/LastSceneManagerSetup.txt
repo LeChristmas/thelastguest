@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/Prototypes/Prototype_Fourteen_FlashLight.unity
+  isLoaded: 1
+  isActive: 1
