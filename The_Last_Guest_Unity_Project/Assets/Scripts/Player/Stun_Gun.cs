@@ -29,6 +29,10 @@ public class Stun_Gun : MonoBehaviour {
     private bool stun_gun_active = false;
     private bool flash_light_active = true;
 
+    [Header("Particle Effect")]
+    public ParticleSystem stunGunEffectPrimary;
+    public ParticleSystem stunGunEffectSecondary;
+
     public void Fill()
     {
         ammunition += 100.0f;
@@ -66,6 +70,12 @@ public class Stun_Gun : MonoBehaviour {
 
                 nextFire = Time.time + firerate;
                 shots = Instantiate(shot, spawner.transform.position, spawner.transform.rotation);
+
+                //Stun Gun Particle System
+                stunGunEffectPrimary.Play();
+                stunGunEffectSecondary.Play();
+                stunGunEffectPrimary.enableEmission = true;
+                stunGunEffectSecondary.enableEmission = true;
             }
         }
     }
