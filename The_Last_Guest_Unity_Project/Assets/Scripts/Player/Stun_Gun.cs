@@ -23,10 +23,6 @@ public class Stun_Gun : MonoBehaviour {
 
     private float nextFire = 0.0f;
 
-    public ParticleSystem stunGunEffectPrimary;
-
-    public ParticleSystem stunGunEffectSecondary;
-
     public void Fill()
     {
         ammunition++;
@@ -39,18 +35,13 @@ public class Stun_Gun : MonoBehaviour {
 
         spawner.transform.LookAt(target);
 
-        if (Input.GetKeyDown(firebutton))
+		if(Input.GetKeyDown(firebutton))
         {
-            if (Time.time > nextFire && ammunition > 0)
+            if(Time.time > nextFire && ammunition > 0)
             {
                 ammunition--;
                 nextFire = Time.time + firerate;
                 shots = Instantiate(shot, spawner.transform.position, spawner.transform.rotation);
-                stunGunEffectPrimary.Play();
-                stunGunEffectSecondary.Play();
-                stunGunEffectPrimary.enableEmission = true;
-                stunGunEffectSecondary.enableEmission = true;
-
             }
         }
 	}

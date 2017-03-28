@@ -5,7 +5,6 @@ using RAIN.Entities;
 
 public class Movement : MonoBehaviour {
 
-    [Header("Controls")]
     public string ws;
     public string ad;
     public string crouch;
@@ -15,7 +14,6 @@ public class Movement : MonoBehaviour {
     private float speed;
     private float crouchspeed;
 
-    [Header("Speed")]
     public float speedH = 2.0f;
     public float speedV = 2.0f;
 
@@ -39,13 +37,6 @@ public class Movement : MonoBehaviour {
     private bool areahiding;
 
     private bool paused = false;
-
-    [Header("Audio")]
-    public AudioSource footsteps;
-    public AudioSource breathing;
-    public AudioSource Scream;
-
-
 
     // Use this for initialization
     void Start ()
