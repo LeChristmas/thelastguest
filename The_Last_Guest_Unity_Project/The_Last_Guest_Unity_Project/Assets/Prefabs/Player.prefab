@@ -669,7 +669,11 @@ MonoBehaviour:
   cs: 0.05
   ss: 0.2
   crouch_height: 0.5
-  sprint_UI: {fileID: 0}
+  sprint_gameobject: {fileID: 0}
+  sprint_fill_amount: 0
+  sprint_drain_sensitivity: 0.1
+  sprint_regen_sensititvity: 0.05
+  sprint_active: 0
 --- !u!114 &114830098805275318
 MonoBehaviour:
   m_ObjectHideFlags: 1

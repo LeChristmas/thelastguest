@@ -44,11 +44,13 @@ public class Movement : MonoBehaviour {
     // Sprint UI Stuff
     public GameObject sprint_gameobject;
     public float sprint_fill_amount;
-    public float sprint_sensitivity = 0.1f;
-    public bool sprint_active = false;
+    public float sprint_drain_sensitivity = 0.1f;
+    public float sprint_regen_sensititvity = 0.1f;
+    private bool sprint_active = false;
 
     private Image sprint_UI;
     private float sprint_drain;
+    private float sprint_regen;
 
     // Hiding Bools
     private bool crouched;
@@ -159,15 +161,29 @@ public class Movement : MonoBehaviour {
             myrig.Entity.IsActive = false;
         }
 
-        sprint_drain = sprint_sensitivity * 1.0f;
+        sprint_drain = sprint_drain_sensitivity * 1.0f;
+        sprint_regen = sprint_regen_sensititvity * 1.0f;
 
-        if (Input.GetKey(sprint) && !crouched)
+        if (sprint_active == false && sprint_UI.fillAmount < 100.0f)
+        {
+            sprint_UI.fillAmount += sprint_regen;
+        }
+
+        if (Input.GetKey(sprint) && !crouched && sprint_UI.fillAmount > 0.0f)
         {
             transform.Translate(moveHorizontal * sprint_speed, 0.0f, moveVertical * sprint_speed);
 
             myrig.Entity.IsActive = true;
 
             sprint_UI.fillAmount -= sprint_drain;
+
+
+            sprint_active = true;
+        }
+
+        if(Input.GetKeyUp(sprint))
+        {
+            sprint_active = false;
         }
 
 
