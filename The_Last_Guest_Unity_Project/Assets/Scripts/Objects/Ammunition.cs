@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class Ammunition : MonoBehaviour {
 
-    private GameObject stungun;
+    private GameObject switcher;
 
 	// Use this for initialization
 	void Start ()
     {
-        stungun = GameObject.Find("Stun_Gun");
+        switcher = GameObject.Find("Items");
 
-        stungun.GetComponent<Stun_Gun>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        switcher.GetComponent<Combined_Items>();
 	}
 
     public void Ammo()
     {
-        stungun.SendMessage("Fill");
+        switcher.SendMessage("Fill");
 
         Destroy(gameObject);
     }
