@@ -56,6 +56,8 @@ public class Switcher : MonoBehaviour {
 
     void Update ()
     {
+        Debug.Log("Switcher ammunition is " + ammunition);
+
         ammunition_text.text = ammunition.ToString();
 
         if(Input.GetKeyDown(swap_button) && flash_light_active)

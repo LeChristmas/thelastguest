@@ -52,9 +52,19 @@ public class Flash_Light : MonoBehaviour {
 
     void Update ()
     {
+        Debug.Log("Flash Light ammunition is " + ammunition);
+
+        if (ammunition < 0.1f)
+        {
+            flash = false;
+        }
+
         if(Input.GetKeyDown(firebutton))
         {
-            flash = !flash;
+            if(ammunition > 0.0f)
+            {
+                flash = !flash;
+            }
         }
 
         if(!flash)
