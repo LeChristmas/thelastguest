@@ -71,8 +71,6 @@ public class Combined_Items : MonoBehaviour {
 
     void Update ()
     {
-        Debug.Log("ammunition is at " + ammunition);
-
         ammunition_text.text = ammunition.ToString("F0");
 
         spawner.transform.LookAt(target);

@@ -19818,6 +19818,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157859061}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1159785853 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1117404996512848, guid: 1275321741951e04dbe98872ba103649,
+    type: 2}
+  m_PrefabInternal: {fileID: 2106051174}
 --- !u!1 &1167153974
 GameObject:
   m_ObjectHideFlags: 1
@@ -21579,7 +21584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427eea8fd068017469d361ddec961fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1159785853}
   inventory: {fileID: 1057658306}
   enemyonedam: 0.005
   enemytwodam: 0.1

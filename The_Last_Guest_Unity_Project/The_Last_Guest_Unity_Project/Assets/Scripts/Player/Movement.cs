@@ -46,7 +46,9 @@ public class Movement : MonoBehaviour {
     public float sprint_fill_amount;
     public float sprint_drain_sensitivity = 0.1f;
     public float sprint_regen_sensititvity = 0.1f;
+
     private bool sprint_active = false;
+    private bool sprint_delay = false;
 
     private Image sprint_UI;
     private float sprint_drain;
@@ -130,7 +132,14 @@ public class Movement : MonoBehaviour {
         {
             transform.Translate(moveHorizontal * speed, 0.0f, moveVertical * speed);
 
-            myrig.Entity.IsActive = true;
+            if (area_hiding)
+            {
+                myrig.Entity.IsActive = false;
+            }
+            else
+            {
+                myrig.Entity.IsActive = true;
+            }
         }
 
         if (crouched)
@@ -138,38 +147,35 @@ public class Movement : MonoBehaviour {
             transform.Translate(moveHorizontal * crouch_speed, 0.0f, moveVertical * crouch_speed);
 
             myrig.Entity.IsActive = true;
-        }
 
-        if (crouched && cover_hiding)
-        {
-            transform.Translate(moveHorizontal * crouch_speed, 0.0f, moveVertical * crouch_speed);
+            if (cover_hiding)
+            {
+                myrig.Entity.IsActive = false;
+            }
+            else
+            {
+                myrig.Entity.IsActive = true;
+            }
 
-            myrig.Entity.IsActive = false;
-        }
-
-        if (!crouched && area_hiding)
-        {
-            transform.Translate(moveHorizontal * speed, 0.0f, moveVertical * speed);
-
-            myrig.Entity.IsActive = false;
-        }
-
-        if (crouched && area_hiding)
-        {
-            transform.Translate(moveHorizontal * crouch_speed, 0.0f, moveVertical * crouch_speed);
-
-            myrig.Entity.IsActive = false;
+            if (area_hiding)
+            {
+                myrig.Entity.IsActive = false;
+            }
+            else
+            {
+                myrig.Entity.IsActive = true;
+            }
         }
 
         sprint_drain = sprint_drain_sensitivity * 1.0f;
         sprint_regen = sprint_regen_sensititvity * 1.0f;
 
-        if (sprint_active == false && sprint_UI.fillAmount < 100.0f)
+        if (sprint_active == false && sprint_UI.fillAmount < 1.0f)
         {
             sprint_UI.fillAmount += sprint_regen;
         }
 
-        if (Input.GetKey(sprint) && !crouched && sprint_UI.fillAmount > 0.0f)
+        if (Input.GetKey(sprint) && !crouched && sprint_UI.fillAmount > 0.0f && !sprint_delay)
         {
             transform.Translate(moveHorizontal * sprint_speed, 0.0f, moveVertical * sprint_speed);
 
@@ -181,9 +187,15 @@ public class Movement : MonoBehaviour {
             sprint_active = true;
         }
 
+        if(sprint_UI.fillAmount > 0.9f)
+        {
+            sprint_delay = false;
+        }
+
         if(Input.GetKeyUp(sprint))
         {
             sprint_active = false;
+            sprint_delay = true;
         }
 
 
