@@ -17,6 +17,7 @@ public class Pauser : MonoBehaviour {
     public GameObject pack;
     public GameObject pack_text;
     public GameObject pick_up;
+    public GameObject sprint;
 
     public GameObject resume;
     public GameObject instructions;
@@ -69,6 +70,7 @@ public class Pauser : MonoBehaviour {
                     pack.SetActive(true);
                     pack_text.SetActive(true);
                     pick_up.SetActive(true);
+                    sprint.SetActive(true);
 
                     resume.SetActive(false);
                     instructions.SetActive(false);
@@ -92,6 +94,7 @@ public class Pauser : MonoBehaviour {
                     pack.SetActive(false);
                     pack_text.SetActive(false);
                     pick_up.SetActive(false);
+                    sprint.SetActive(false);
 
                     resume.SetActive(true);
                     instructions.SetActive(true);

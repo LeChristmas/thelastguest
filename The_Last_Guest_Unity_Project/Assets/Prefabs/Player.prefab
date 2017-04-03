@@ -658,15 +658,18 @@ MonoBehaviour:
   ws: Horizontal
   ad: Vertical
   crouch: c
+  sprint: v
   cam: {fileID: 4206586847002236}
+  detector: {fileID: 1722585829925072}
   speedH: 2
   speedV: 2
-  detector: {fileID: 1722585829925072}
   minimumY: -60
   maximumY: 60
   s: 0.1
   cs: 0.05
-  crouchheight: 0.4
+  ss: 0.2
+  crouch_height: 0.5
+  sprint_UI: {fileID: 0}
 --- !u!114 &114830098805275318
 MonoBehaviour:
   m_ObjectHideFlags: 1

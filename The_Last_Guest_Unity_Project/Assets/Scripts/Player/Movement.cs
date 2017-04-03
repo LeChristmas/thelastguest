@@ -2,39 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RAIN.Entities;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour {
 
+    // Controls
     public string ws;
     public string ad;
     public string crouch;
+    public string sprint;
 
+    // Camera
     public Transform cam;
 
-    private float speed;
-    private float crouchspeed;
-
-    public float speedH = 2.0f;
-    public float speedV = 2.0f;
-
+    // RAIN
     public GameObject detector;
     EntityRig myrig;
+
+    // Mouse Stuff
+    public float speedH = 2.0f;
+    public float speedV = 2.0f;
+    public float minimumY = -60.0f;
+    public float maximumY = 60.0f;
+
+    // Movement Speeds
+    public float s = 0.1f;
+    public float cs = 0.05f;
+    public float ss = 0.5f;
+
+    private float speed;
+    private float crouch_speed;
+    private float sprint_speed;
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
     private float pitchY;
 
-    public float minimumY = -60.0f;
-    public float maximumY = 60.0f;
+    // Crouch Height
+    public float crouch_height = 0.5f;
 
-    public float s = 0.1f;
-    public float cs = 0.05f;
+    // Sprint UI Stuff
+    public GameObject sprint_gameobject;
+    public float sprint_fill_amount;
+    public float sprint_sensitivity = 0.1f;
+    public bool sprint_active = false;
 
-    public float crouchheight = 0.5f;
+    private Image sprint_UI;
+    private float sprint_drain;
 
+    // Hiding Bools
     private bool crouched;
-    private bool coverhiding;
-    private bool areahiding;
+    private bool cover_hiding;
+    private bool area_hiding;
 
     private bool paused = false;
 
@@ -42,47 +61,51 @@ public class Movement : MonoBehaviour {
     void Start ()
     {
         crouched = false;
-        coverhiding = false;
-        areahiding = false;
+        cover_hiding = false;
+        area_hiding = false;
 
         speed = s;
-        crouchspeed = cs;
+        crouch_speed = cs;
+        sprint_speed = ss;
 
         myrig = detector.GetComponent<EntityRig>();
+
+        sprint_UI = sprint_gameobject.GetComponent<Image>();
+        sprint_UI.fillAmount = 1.0f;
     }
 	
     public void CovHidden()
     {
-        coverhiding = true;
+        cover_hiding = true;
     }
 
     public void CovUnHidden()
     {
-        coverhiding = false;
+        cover_hiding = false;
     }
 
     public void ArHidden()
     {
-        areahiding = true;
+        area_hiding = true;
     }
 
     public void ArUnHidden()
     {
-        areahiding = false;
+        area_hiding = false;
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         // other keys on the keyboard
         if (Input.GetKeyDown(crouch))
         {
-            cam.Translate(0.0f, -crouchheight, 0.0f);
+            cam.Translate(0.0f, -crouch_height, 0.0f);
             crouched = true;
         }
         else if (Input.GetKeyUp(crouch))
         {
-            cam.Translate(0.0f, crouchheight, 0.0f);
+            cam.Translate(0.0f, crouch_height, 0.0f);
             crouched = false;
         }
 
@@ -110,30 +133,41 @@ public class Movement : MonoBehaviour {
 
         if (crouched)
         {
-            transform.Translate(moveHorizontal * crouchspeed, 0.0f, moveVertical * crouchspeed);
+            transform.Translate(moveHorizontal * crouch_speed, 0.0f, moveVertical * crouch_speed);
 
             myrig.Entity.IsActive = true;
         }
 
-        if (crouched && coverhiding)
+        if (crouched && cover_hiding)
         {
-            transform.Translate(moveHorizontal * crouchspeed, 0.0f, moveVertical * crouchspeed);
+            transform.Translate(moveHorizontal * crouch_speed, 0.0f, moveVertical * crouch_speed);
 
             myrig.Entity.IsActive = false;
         }
 
-        if (!crouched && areahiding)
+        if (!crouched && area_hiding)
         {
             transform.Translate(moveHorizontal * speed, 0.0f, moveVertical * speed);
 
             myrig.Entity.IsActive = false;
         }
 
-        if (crouched && areahiding)
+        if (crouched && area_hiding)
         {
-            transform.Translate(moveHorizontal * crouchspeed, 0.0f, moveVertical * crouchspeed);
+            transform.Translate(moveHorizontal * crouch_speed, 0.0f, moveVertical * crouch_speed);
 
             myrig.Entity.IsActive = false;
+        }
+
+        sprint_drain = sprint_sensitivity * 1.0f;
+
+        if (Input.GetKey(sprint) && !crouched)
+        {
+            transform.Translate(moveHorizontal * sprint_speed, 0.0f, moveVertical * sprint_speed);
+
+            myrig.Entity.IsActive = true;
+
+            sprint_UI.fillAmount -= sprint_drain;
         }
 
 
@@ -144,7 +178,7 @@ public class Movement : MonoBehaviour {
         paused = false;
 
         speed = s;
-        crouchspeed = cs;
+        crouch_speed = cs;
     }
 
     public void Paused()
@@ -152,6 +186,6 @@ public class Movement : MonoBehaviour {
         paused = true;
 
         speed = 0.0f;
-        crouchspeed = 0.0f;
+        crouch_speed = 0.0f;
     }
 }
