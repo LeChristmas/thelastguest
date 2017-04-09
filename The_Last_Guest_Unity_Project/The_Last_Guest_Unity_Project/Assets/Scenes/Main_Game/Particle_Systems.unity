@@ -229,7 +229,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64625775}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 6.2018523, y: 0.89, z: 5.0261054}
+  m_LocalPosition: {x: 12.01, y: 0.89, z: 5.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1620136560}
@@ -3012,8 +3012,33 @@ Prefab:
     - target: {fileID: 198840435519945816, guid: d23ce0bced92bd045a37e6336087b717,
         type: 2}
       propertyPath: randomSeed
-      value: 734040296
+      value: -719087581
       objectReference: {fileID: 0}
+    - target: {fileID: 198840435519945816, guid: d23ce0bced92bd045a37e6336087b717,
+        type: 2}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198840435519945816, guid: d23ce0bced92bd045a37e6336087b717,
+        type: 2}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198840435519945816, guid: d23ce0bced92bd045a37e6336087b717,
+        type: 2}
+      propertyPath: CollisionModule.collisionMessages
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199966853742349528, guid: d23ce0bced92bd045a37e6336087b717,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89ff19d667a6a5d4bb76df1fcb718402, type: 2}
+    - target: {fileID: 199966853742349528, guid: d23ce0bced92bd045a37e6336087b717,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89ff19d667a6a5d4bb76df1fcb718402, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d23ce0bced92bd045a37e6336087b717, type: 2}
   m_IsPrefabParent: 0
@@ -5774,7 +5799,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1871764584}
   m_LocalRotation: {x: -0.9390173, y: -0, z: -0, w: 0.34387}
-  m_LocalPosition: {x: -0, y: -0.5, z: -1}
+  m_LocalPosition: {x: -0, y: -0.13, z: -0.687}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 64625783}
@@ -6345,7 +6370,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -258084810
+  randomSeed: 1560442782
   InitialModule:
     serializedVersion: 3
     enabled: 1
