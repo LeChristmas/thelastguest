@@ -200,6 +200,16 @@ public class Pickup_Script : MonoBehaviour
                 {
                     hit.collider.SendMessage("Below");
                 }
+
+                // Big Arse Button
+                if (hit.collider.CompareTag("BAB") && distance < pickupdistance)
+                {
+                    pickuptext.enabled = true;
+                    if (Input.GetKeyDown("f"))
+                    {
+                        hit.collider.SendMessage("Game_Over");
+                    }
+                }
             }
         }
     }

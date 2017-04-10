@@ -1,0 +1,270 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 980 (ID=0x13c0)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   21.21.13.7653
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\RAIN.dll (this message is harmless)
+Loading C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\RAIN.dll into Unity Child Domain
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\RAINMetaform.dll (this message is harmless)
+Loading C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\RAINMetaform.dll into Unity Child Domain
+- Completed reload, in  0.031 seconds
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\System.dll (this message is harmless)
+desktop: 3840x2160 60Hz; virtual: 3840x2160 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.410672 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: cc0 -> priority: 1 
+  Thread -> id: 2654 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.103521 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 409.
+Total: 0.151436 ms (FindLiveObjects: 0.011417 ms CreateObjectMapping: 0.013821 ms MarkObjects: 0.114479 ms  DeleteObjects: 0.011417 ms)
+
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\System.Xml.dll (this message is harmless)
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.282742 ms
+The AnimationClip 'Level_Two_Door' used by the Animation component 'Wall_x2 (3)' must be marked as Legacy.
+ 
+(Filename:  Line: 2019)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 403)
+
+Platform assembly: C:\Users\cwrigley\Desktop\The_Last_Guest_Unity_Project\Week 9 Build\The Last Guest_Data\Managed\Mono.Security.dll (this message is harmless)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 10348.
+Total: 20.552162 ms (FindLiveObjects: 0.291155 ms CreateObjectMapping: 0.097051 ms MarkObjects: 20.116779 ms  DeleteObjects: 0.046272 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at One.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Five.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Zero.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Clear.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Seven.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Eight.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Enter.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Six.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Two.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Three.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Nine.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Four.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 47.375137 ms
+
+Unloading 214 unused Assets to reduce memory usage. Loaded Objects now: 449.
+Total: 0.856039 ms (FindLiveObjects: 0.042967 ms CreateObjectMapping: 0.021333 ms MarkObjects: 0.228657 ms  DeleteObjects: 0.563081 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.289953 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 415.
+Total: 0.295362 ms (FindLiveObjects: 0.025840 ms CreateObjectMapping: 0.013220 ms MarkObjects: 0.204920 ms  DeleteObjects: 0.051079 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.727438 ms
+The AnimationClip 'Level_Two_Door' used by the Animation component 'Wall_x2 (3)' must be marked as Legacy.
+ 
+(Filename:  Line: 2019)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 403)
+
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 10349.
+Total: 19.947315 ms (FindLiveObjects: 0.328413 ms CreateObjectMapping: 0.096751 ms MarkObjects: 19.487595 ms  DeleteObjects: 0.033953 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at One.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Five.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Zero.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Clear.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Seven.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Eight.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Enter.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Six.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Two.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Three.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Nine.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Four.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+howdy
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 48.355572 ms
+
+Unloading 214 unused Assets to reduce memory usage. Loaded Objects now: 449.
+Total: 16.585354 ms (FindLiveObjects: 0.033953 ms CreateObjectMapping: 0.023737 ms MarkObjects: 15.893672 ms  DeleteObjects: 0.633391 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.282441 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 518.
+Total: 16.704041 ms (FindLiveObjects: 0.034854 ms CreateObjectMapping: 0.014723 ms MarkObjects: 16.576941 ms  DeleteObjects: 0.076920 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.379493 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 437.
+Total: 16.827534 ms (FindLiveObjects: 0.014122 ms CreateObjectMapping: 0.013821 ms MarkObjects: 16.751814 ms  DeleteObjects: 0.047474 ms)
+

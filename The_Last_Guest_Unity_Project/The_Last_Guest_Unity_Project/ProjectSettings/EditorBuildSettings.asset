@@ -10,4 +10,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main_Game/Level_One.unity
   - enabled: 1
+    path: Assets/Scenes/Main_Game/Level_Select.unity
+  - enabled: 1
+    path: Assets/Scenes/Main_Game/Level_Two.unity
+  - enabled: 1
     path: Assets/Scenes/Main_Game/Instructions.unity
