@@ -170,9 +170,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4141203999580218}
-  - component: {fileID: 114657807950357682}
   - component: {fileID: 54992575902447956}
   - component: {fileID: 65653855732386544}
+  - component: {fileID: 114612565505521644}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -208,8 +208,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1940823764343454}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 4.5999, y: 2.6374, z: 55.88}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0630679, y: 1.92, z: -8.609156}
   m_LocalScale: {x: 1.29, y: 1.29, z: 1.29}
   m_Children:
   - {fileID: 4277130980526092}
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickuptext: {fileID: 0}
   pickupdistance: 2
---- !u!114 &114657807950357682
+--- !u!114 &114612565505521644
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -702,11 +702,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1940823764343454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 840bafdd99e273c49aedc456c4a7d7a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 521ae48e808bbc14ba0ef39c1cbfa96a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ws: Horizontal
-  ad: Vertical
+  rb: {fileID: 54992575902447956}
+  up: w
+  down: s
+  left: a
+  right: d
   crouch: c
   sprint: v
   cam: {fileID: 4931748741288942}
@@ -715,9 +718,12 @@ MonoBehaviour:
   speedV: 2
   minimumY: -60
   maximumY: 60
-  s: 0.1
-  cs: 0.05
-  ss: 0.2
+  standard_vertical_speed: 8
+  standard_horizontal_speed: 8
+  crouch_vertical_speed: 5
+  crouch_horizontal_speed: 5
+  sprint_vertical_speed: 13
+  sprint_horizontal_speed: 13
   crouch_height: 0.5
   sprint_gameobject: {fileID: 0}
   sprint_fill_amount: 0
