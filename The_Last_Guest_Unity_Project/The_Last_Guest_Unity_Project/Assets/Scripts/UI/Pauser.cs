@@ -7,25 +7,15 @@ public class Pauser : MonoBehaviour {
 
     public GameObject player;
 
-    //public GameObject pausemenu;
-    //public GameObject hud;
+    public GameObject hud;
+    public GameObject pause_menu;
+    public GameObject info;
 
-    public GameObject reticule;
-    public GameObject health_bar;
-    public GameObject ammo;
-    public GameObject ammo_text;
-    public GameObject pack;
-    public GameObject pack_text;
-    public GameObject pick_up;
-    public GameObject sprint;
+    private bool info_active = false;
 
-    public GameObject resume;
-    public GameObject instructions;
-    public GameObject menu;
+    private Rigidbody rigid_body;
 
-    private Rigidbody rb;
-
-    private Movement sc;
+    private Movement movement_script;
 
     private int paused = 1;
 
@@ -35,9 +25,13 @@ public class Pauser : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        rb = player.gameObject.GetComponent<Rigidbody>();
-        sc = player.gameObject.GetComponent<Movement>();
-	}
+        rigid_body = player.gameObject.GetComponent<Rigidbody>();
+        movement_script = player.gameObject.GetComponent<Movement>();
+
+        hud.SetActive(true);
+        pause_menu.SetActive(false);
+        info.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -59,49 +53,45 @@ public class Pauser : MonoBehaviour {
                     Time.timeScale = 1.0f;
                     Cursor.lockState = lockedMode;
                     Cursor.visible = false;
-                    sc.SendMessage("UnPaused");
-                    //pausemenu.SetActive(false);
-                    //hud.SetActive(true);
+                    movement_script.UnPaused();
+                    info_active = false;
 
-                    reticule.SetActive(true);
-                    health_bar.SetActive(true);
-                    ammo.SetActive(true);
-                    ammo_text.SetActive(true);
-                    pack.SetActive(true);
-                    pack_text.SetActive(true);
-                    pick_up.SetActive(true);
-                    sprint.SetActive(true);
+                    hud.SetActive(true);
+                    pause_menu.SetActive(false);
+                    info.SetActive(false);
 
-                    resume.SetActive(false);
-                    instructions.SetActive(false);
-                    menu.SetActive(false);
                     break;
                 }
             case 2:
                 {
-                    rb.velocity = Vector3.zero;
+                    rigid_body.velocity = Vector3.zero;
                     Time.timeScale = 0.0f;
                     Cursor.lockState = menuMode;
                     Cursor.visible = true;
-                    sc.SendMessage("Paused");
-                    //pausemenu.SetActive(true);
-                    //hud.SetActive(false);
+                    movement_script.Paused();
 
-                    reticule.SetActive(false);
-                    health_bar.SetActive(false);
-                    ammo.SetActive(false);
-                    ammo_text.SetActive(false);
-                    pack.SetActive(false);
-                    pack_text.SetActive(false);
-                    pick_up.SetActive(false);
-                    sprint.SetActive(false);
+                    if(!info_active)
+                    {
+                        hud.SetActive(false);
+                        pause_menu.SetActive(true);
+                        info.SetActive(false);
+                    }
 
-                    resume.SetActive(true);
-                    instructions.SetActive(true);
-                    menu.SetActive(true);
+                    if(info_active)
+                    {
+                        hud.SetActive(false);
+                        pause_menu.SetActive(false);
+                        info.SetActive(true);
+                    }
+
                     break;
                 }
         }
+    }
+
+    public void Info ()
+    {
+        info_active = !info_active;
     }
 
     public void UnPause()

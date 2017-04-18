@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeyBinding : MonoBehaviour {
+public class Key_Binding : MonoBehaviour {
 
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
 
-    public Text up, down, left, right, crouch, sprint, fire, swap;
+    public Text up, down, left, right, crouch, sprint, fire, swap, heal, interact;
 
     private GameObject current_key;
 
@@ -19,9 +19,11 @@ public class KeyBinding : MonoBehaviour {
         keys.Add("Left", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A")));
         keys.Add("Right", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D")));
         keys.Add("Crouch", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Crouch", "C")));
-        keys.Add("Sprint", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Sprint", "X")));
+        keys.Add("Sprint", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Sprint", "V")));
         keys.Add("Fire", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Fire", "Mouse0")));
         keys.Add("Swap", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Swap", "Mouse1")));
+        keys.Add("Heal", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Heal", "E")));
+        keys.Add("Interact", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Interact", "F")));
 
         up.text = keys["Up"].ToString();
         down.text = keys["Down"].ToString();
@@ -31,6 +33,8 @@ public class KeyBinding : MonoBehaviour {
         sprint.text = keys["Sprint"].ToString();
         fire.text = keys["Fire"].ToString();
         swap.text = keys["Swap"].ToString();
+        heal.text = keys["Heal"].ToString();
+        interact.text = keys["Interact"].ToString();
 
     }
 	
@@ -60,6 +64,8 @@ public class KeyBinding : MonoBehaviour {
 
     public void SaveKeys ()
     {
+        Debug.Log("saved");
+
         foreach (var key in keys)
         {
             PlayerPrefs.SetString(key.Key, key.Value.ToString());
