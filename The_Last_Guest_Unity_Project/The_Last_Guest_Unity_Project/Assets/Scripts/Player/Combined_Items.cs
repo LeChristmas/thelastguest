@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class Combined_Items : MonoBehaviour {
 
+    // Activators
+    public bool stun_gun_activator = false;
+    public bool flash_light_activator = false;
+
     // General Stuff
     public GameObject stun_gun_object;
     public GameObject flash_light_object;
@@ -61,12 +65,24 @@ public class Combined_Items : MonoBehaviour {
         stun_gun_active = false;
         flash_light_active = true;
 
-        flash_light_renderer.enabled = true;
+        flash_light_renderer.enabled = false;
         stun_gun_renderer.enabled = false;
 
         flash_light_component.enabled = false;
 
+        swapper = 0;
+    }
+
+    public void Flash_Activate ()
+    {
+        flash_light_activator = true;
         swapper = 1;
+    }
+
+    public void Stun_Activate ()
+    {
+        stun_gun_activator = true;
+        swapper = 2;
     }
 
     void Update ()
@@ -76,9 +92,12 @@ public class Combined_Items : MonoBehaviour {
         spawner.transform.LookAt(target);
         flash_light_light.transform.LookAt(target);
 
-        if(Input.GetKeyDown(swap_button))
+        if(flash_light_activator && stun_gun_activator)
         {
-            swapper++;
+            if (Input.GetKeyDown(swap_button))
+            {
+                swapper++;
+            }
         }
 
         switch(swapper)
