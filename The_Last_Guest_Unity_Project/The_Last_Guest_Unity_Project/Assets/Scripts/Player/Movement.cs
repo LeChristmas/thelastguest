@@ -51,6 +51,7 @@ public class Movement : MonoBehaviour
 
     // Sprint UI Stuff
     public GameObject sprint_gameobject;
+    public GameObject sprint_exhausted_gameobject;
     public float sprint_fill_amount;
     public float sprint_drain_sensitivity = 0.1f;
     public float sprint_regen_sensititvity = 0.1f;
@@ -59,6 +60,7 @@ public class Movement : MonoBehaviour
     private bool sprint_delay = false;
 
     private Image sprint_UI;
+    private Image sprint_exhausted_UI;
     private float sprint_drain;
     private float sprint_regen;
 
@@ -80,6 +82,12 @@ public class Movement : MonoBehaviour
 
         sprint_UI = sprint_gameobject.GetComponent<Image>();
         sprint_UI.fillAmount = 1.0f;
+
+        sprint_exhausted_UI = sprint_exhausted_gameobject.GetComponent<Image>();
+        sprint_exhausted_UI.fillAmount = 1.0f;
+
+        sprint_UI.enabled = true;
+        sprint_exhausted_UI.enabled = false;
     }
 
     public void CovHidden()
@@ -218,6 +226,7 @@ public class Movement : MonoBehaviour
         if (sprint_active == false && sprint_UI.fillAmount < 1.0f)
         {
             sprint_UI.fillAmount += sprint_regen;
+            sprint_exhausted_UI.fillAmount += sprint_regen;
         }
 
         if (Input.GetKey(sprint) && !crouched && sprint_UI.fillAmount > 0.0f && !sprint_delay)
@@ -250,18 +259,54 @@ public class Movement : MonoBehaviour
             myrig.Entity.IsActive = true;
 
             sprint_UI.fillAmount -= sprint_drain;
+            sprint_exhausted_UI.fillAmount -= sprint_drain;
 
 
             sprint_active = true;
         }
 
+        if(sprint_delay == true)
+        {
+            // Forward
+            if (Input.GetKey(up))
+            {
+                rb.MovePosition(transform.position + transform.forward * crouch_vertical_speed * Time.deltaTime);
+            }
+
+            // Back
+            if (Input.GetKey(down))
+            {
+                rb.MovePosition(transform.position - transform.forward * crouch_vertical_speed * Time.deltaTime);
+            }
+
+            // Right
+            if (Input.GetKey(right))
+            {
+                rb.MovePosition(transform.position + transform.right * crouch_horizontal_speed * Time.deltaTime);
+            }
+
+            // Left
+            if (Input.GetKey(left))
+            {
+                rb.MovePosition(transform.position - transform.right * crouch_horizontal_speed * Time.deltaTime);
+            }
+
+            myrig.Entity.IsActive = true;
+        }
+
         if (sprint_UI.fillAmount > 0.9f)
         {
             sprint_delay = false;
+
+            sprint_UI.enabled = true;
+            sprint_exhausted_UI.enabled = false;
         }
 
-        if (Input.GetKeyUp(sprint))
+        if (Input.GetKeyUp(sprint) || sprint_UI.fillAmount < 0.01f)
         {
+            sprint_UI.enabled = false;
+            sprint_exhausted_UI.enabled = true;
+
             sprint_active = false;
             sprint_delay = true;
         }

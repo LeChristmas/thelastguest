@@ -727,6 +727,7 @@ MonoBehaviour:
   sprint_horizontal_speed: 13
   crouch_height: 0.5
   sprint_gameobject: {fileID: 0}
+  sprint_exhausted_gameobject: {fileID: 0}
   sprint_fill_amount: 0
   sprint_drain_sensitivity: 0.01
   sprint_regen_sensititvity: 0.005
