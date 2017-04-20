@@ -26,6 +26,7 @@ TagManager:
   - up
   - down
   - BAB
+  - Box
   layers:
   - Default
   - TransparentFX
