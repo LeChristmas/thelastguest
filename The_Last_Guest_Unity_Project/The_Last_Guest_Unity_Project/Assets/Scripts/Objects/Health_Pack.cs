@@ -5,24 +5,33 @@ using UnityEngine.UI;
 
 public class Health_Pack : MonoBehaviour {
 
+    public float pick_up_distance = 2.5f;
+
+    private GameObject player;
+    private Transform player_transform;
+
     private GameObject healthbar;
 
     // Use this for initialization
     void Start ()
     {
-        healthbar = GameObject.Find("Health_Bar");
+        player = GameObject.Find("Player");
+        player_transform = player.GetComponent<Transform>();
 
+        healthbar = GameObject.Find("Health_Bar");
         healthbar.GetComponent<Mental_Health>();
     }
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void Grab()
+	void Update ()
     {
-        healthbar.SendMessage("HealthPack");
-        Destroy(gameObject);
+        Vector3 target_distance = player_transform.position - transform.position;
+        float distance = Vector3.Distance(target_distance, transform.forward);
+
+        if (distance < pick_up_distance)
+        {
+            healthbar.SendMessage("HealthPack");
+            Destroy(gameObject);
+        }
     }
 }
