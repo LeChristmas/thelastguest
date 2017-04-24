@@ -11,14 +11,13 @@ public class Mental_Health : MonoBehaviour {
 
     public Text inventory;
 
-    public float enemyonedam = 0.005f;
-    public float enemytwodam = 0.1f;
-    public float enemythreedam = 0.1f;
-    public float enemyfourdam = 0.1f;
-    public float bodydamage = 0.001f;
+    public float enemyonedam = 0.00375f;
+    public float enemytwodam = 0.075f;
+    public float enemythreedam = 0.075f;
+    public float enemyfourdam = 0.075f;
+    public float bodydamage = 0.00075f;
 
-    public float healthpickup = 0.25f;
-    public float healthpack = 0.5f;
+    public float healthpack = 0.25f;
 
     public string levelname;
 
@@ -37,7 +36,7 @@ public class Mental_Health : MonoBehaviour {
     void Update()
     {
 
-        if(h >= 1)
+        if(h >= 0.75f)
         {
             SceneManager.LoadScene(levelname);
         }
@@ -86,11 +85,6 @@ public class Mental_Health : MonoBehaviour {
     public void Bodies()
     {
         h += bodydamage;
-    }
-
-    public void HealthPick()
-    {
-        h -= healthpickup;
     }
 
     public void HealthPack()

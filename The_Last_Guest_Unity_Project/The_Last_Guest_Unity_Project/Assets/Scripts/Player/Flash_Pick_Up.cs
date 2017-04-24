@@ -26,8 +26,6 @@ public class Flash_Pick_Up : MonoBehaviour
         Vector3 target_distance = player_transform.position - transform.position;
         float distance = Vector3.Distance(target_distance, transform.forward);
 
-        Debug.Log("distance is " + distance);
-
         if (distance < pick_up_distance)
         {
             activator.Flash_Activate();

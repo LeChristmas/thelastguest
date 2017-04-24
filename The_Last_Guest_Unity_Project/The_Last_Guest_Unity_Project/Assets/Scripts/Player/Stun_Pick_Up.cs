@@ -14,7 +14,7 @@ public class Stun_Pick_Up : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player_Camera");
         player_transform = player.GetComponent<Transform>();
 
         items = GameObject.Find("Items");

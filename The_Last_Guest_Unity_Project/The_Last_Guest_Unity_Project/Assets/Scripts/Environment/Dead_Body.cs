@@ -16,7 +16,7 @@ public class Dead_Body : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player_Camera");
         playertransform = player.GetComponent<Transform>();
 
         health = GameObject.Find("Health_Bar");
