@@ -31,6 +31,8 @@ public class Combined_Items : MonoBehaviour {
     private int swapper;
 
     //Stun Gun Related
+    public float stun_gun_cost = 40.0f;
+
     public GameObject spawner;
 
     public GameObject shot;
@@ -70,7 +72,7 @@ public class Combined_Items : MonoBehaviour {
 
         flash_light_component.enabled = false;
 
-        swapper = 0;
+        swapper = 4;
     }
 
     public void Flash_Activate ()
@@ -119,8 +121,18 @@ public class Combined_Items : MonoBehaviour {
                 flash_light_renderer.enabled = false;
                 stun_gun_renderer.enabled = true;
                 break;
+
             case 3:
                 swapper = 1;
+                break;
+
+            case 4:
+                flash = false;
+                stun_gun_active = false;
+                flash_light_active = false;
+
+                flash_light_renderer.enabled = false;
+                stun_gun_renderer.enabled = false;
                 break;
         }
 
@@ -152,11 +164,11 @@ public class Combined_Items : MonoBehaviour {
         }
 
         // Stun Gun Fire
-        if(Input.GetKeyDown(fire_button) && stun_gun_active && ammunition > 99.9f)
+        if(Input.GetKeyDown(fire_button) && stun_gun_active && ammunition > 39.9f)
         {
             if(Time.time > nextFire)
             {
-                ammunition -= 100.0f;
+                ammunition -= stun_gun_cost;
                 nextFire = Time.time + firerate;
                 shots = Instantiate(shot, spawner.transform.position, spawner.transform.rotation);
             }

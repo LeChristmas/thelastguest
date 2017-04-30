@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class Ammunition : MonoBehaviour {
 
+    public float pick_up_distance = 3.0f;
+
+    private GameObject player;
+    private Transform player_transform;
+
     private GameObject switcher;
 
 	// Use this for initialization
 	void Start ()
     {
-        switcher = GameObject.Find("Items");
+        player = GameObject.Find("Player_Camera");
+        player_transform = player.GetComponent<Transform>();
 
+        switcher = GameObject.Find("Items");
         switcher.GetComponent<Combined_Items>();
 	}
 
-    public void Ammo()
+    void Update ()
     {
-        switcher.SendMessage("Fill");
+        Vector3 target_distance = player_transform.position - transform.position;
+        float distance = Vector3.Distance(target_distance, transform.forward);
 
-        Destroy(gameObject);
+        if (distance < pick_up_distance)
+        {
+            switcher.SendMessage("Fill");
+            Destroy(gameObject);
+        }
     }
 }

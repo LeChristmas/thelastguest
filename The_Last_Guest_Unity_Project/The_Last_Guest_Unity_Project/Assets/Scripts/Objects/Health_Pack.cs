@@ -15,7 +15,7 @@ public class Health_Pack : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player_Camera");
         player_transform = player.GetComponent<Transform>();
 
         healthbar = GameObject.Find("Health_Bar");
