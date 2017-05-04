@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 112000001, guid: 3eeb8ad9e06e670419273a84220c0d5c,
+  m_LightingDataAsset: {fileID: 112000001, guid: af46e614106b8d04489fdf2f7367c08d,
     type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -10136,7 +10136,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 43025837ca2a4254a850eb942e77c334, type: 3}
@@ -11367,6 +11367,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 640550902}
+  - component: {fileID: 640550907}
+  - component: {fileID: 640550906}
+  - component: {fileID: 640550905}
+  - component: {fileID: 640550904}
+  - component: {fileID: 640550903}
   m_Layer: 0
   m_Name: Enemy_Two_One
   m_TagString: Untagged
@@ -11392,6 +11397,73 @@ Transform:
   m_Father: {fileID: 2081290226}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640550903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640550901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941165ae317d3da4095cf80e4335cb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitanimation: {fileID: 640550907}
+--- !u!114 &640550904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640550901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691d6fd87d69ef94f9740986f37d605f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &640550905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640550901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd92f37f1250c44478af4b1434a49e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2113557650}
+  stuntime: 3
+--- !u!111 &640550906
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640550901}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &640550907
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640550901}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &653139806
 GameObject:
   m_ObjectHideFlags: 0
@@ -22336,7 +22408,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 875766581
+  randomSeed: -978664280
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -36462,7 +36534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd92f37f1250c44478af4b1434a49e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 2113557650}
   stuntime: 3
 --- !u!54 &2088563144
 Rigidbody:
@@ -36704,9 +36776,9 @@ MonoBehaviour:
       Sensor_B</_sensorName><_isActive>True</_isActive><_sensorColor>0.6,0,0,1</_sensorColor><_mountPoint
       sceneobject="94c573c7-2adf-495e-8379-8e81cfdbf83e" component="0"></_mountPoint><_positionOffset>0,0,0</_positionOffset><_angleOffset>0,0,0</_angleOffset><_filters></_filters><_range>4</_range><_canDetectSelf>False</_canDetectSelf><_horizontalAngle>360</_horizontalAngle><_verticalAngle>45</_verticalAngle><_lineOfSight>True</_lineOfSight><_lineOfSightMask>-5</_lineOfSightMask></element1></_sensors></_senses><_customElements></_customElements></_ai></component>
     _serializedMetaDocument: <meta><element0><key>/component/_ai+_selected</key><value
-      type="System.Int32">0</value></element0></meta>
+      type="System.Int32">5</value></element0></meta>
     _serializedObjects:
-    - {fileID: 4900000, guid: 04031d55e64cfb64eb73848e4d33848e, type: 3}
+    - {fileID: 4900000, guid: e3fc49314053b20459147043f5238c7a, type: 3}
     _serializedCustomData: []
 --- !u!4 &2116580722 stripped
 Transform:
