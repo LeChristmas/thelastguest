@@ -10,6 +10,7 @@ public class Pauser : MonoBehaviour {
     public GameObject hud;
     public GameObject pause_menu;
     public GameObject info;
+    public GameObject game_over;
 
     private bool info_active = false;
 
@@ -31,6 +32,7 @@ public class Pauser : MonoBehaviour {
         hud.SetActive(true);
         pause_menu.SetActive(false);
         info.SetActive(false);
+        game_over.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -86,6 +88,25 @@ public class Pauser : MonoBehaviour {
 
                     break;
                 }
+            case 3:
+                {
+                    //nothing
+                    break;
+                }
+            case 4:
+                {
+                    rigid_body.velocity = Vector3.zero;
+                    Time.timeScale = 0.0f;
+                    Cursor.lockState = menuMode;
+                    Cursor.visible = true;
+                    movement_script.Paused();
+
+                    hud.SetActive(false);
+                    pause_menu.SetActive(false);
+                    info.SetActive(false);
+                    game_over.SetActive(true);
+                    break;
+                }
         }
     }
 
@@ -97,5 +118,10 @@ public class Pauser : MonoBehaviour {
     public void UnPause()
     {
         paused++;
+    }
+
+    public void Game_Over ()
+    {
+        paused = 4;
     }
 }
