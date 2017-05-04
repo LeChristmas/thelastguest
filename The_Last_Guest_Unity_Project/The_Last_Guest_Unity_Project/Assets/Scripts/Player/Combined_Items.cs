@@ -15,8 +15,8 @@ public class Combined_Items : MonoBehaviour {
 
     public Text ammunition_text;
 
-    public string fire_button;
-    public string swap_button;
+    public KeyCode fire_button;
+    public KeyCode swap_button;
 
     public float ammunition = 0.0f;
 

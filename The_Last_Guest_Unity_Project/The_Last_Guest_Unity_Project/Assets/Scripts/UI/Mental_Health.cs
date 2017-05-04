@@ -7,18 +7,21 @@ using UnityEngine.SceneManagement;
 
 public class Mental_Health : MonoBehaviour {
 
+    public KeyCode heal_button;
+
     public GameObject cam;
 
     public Text inventory;
 
-    public float enemyonedam = 0.005f;
-    public float enemytwodam = 0.1f;
-    public float enemythreedam = 0.1f;
-    public float enemyfourdam = 0.1f;
-    public float bodydamage = 0.001f;
+    public GameObject gui_gameobject;
 
-    public float healthpickup = 0.25f;
-    public float healthpack = 0.5f;
+    public float enemyonedam = 0.00375f;
+    public float enemytwodam = 0.00375f;
+    public float enemythreedam = 0.00375f;
+    public float enemyfourdam = 0.00375f;
+    public float bodydamage = 0.00075f;
+
+    public float healthpack = 0.25f;
 
     public string levelname;
 
@@ -28,18 +31,23 @@ public class Mental_Health : MonoBehaviour {
 
     private float vignette;
 
+    private Pauser gui_script;
+
 	// Use this for initialization
 	void Start ()
     {
         h = 0.0f;
+
+        gui_script = gui_gameobject.GetComponent<Pauser>();
+
     }
 
     void Update()
     {
 
-        if(h >= 1)
+        if(h >= 0.75f)
         {
-            SceneManager.LoadScene(levelname);
+            gui_script.Game_Over();
         }
 
         if(Input.GetKeyDown("t"))
@@ -54,7 +62,7 @@ public class Mental_Health : MonoBehaviour {
 
         if(packs > 0)
         {
-            if (Input.GetKeyDown("e"))
+            if (Input.GetKeyDown(heal_button))
             {
                 h -= healthpack;
 
@@ -86,11 +94,6 @@ public class Mental_Health : MonoBehaviour {
     public void Bodies()
     {
         h += bodydamage;
-    }
-
-    public void HealthPick()
-    {
-        h -= healthpickup;
     }
 
     public void HealthPack()

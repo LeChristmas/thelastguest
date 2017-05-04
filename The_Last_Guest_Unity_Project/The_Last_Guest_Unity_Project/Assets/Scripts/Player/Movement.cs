@@ -10,14 +10,12 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
 
     // Controls
-    public string up;
-    public string down;
-    public string left;
-    public string right;
-
-    public string crouch;
-
-    public string sprint;
+    public KeyCode up;
+    public KeyCode down;
+    public KeyCode left;
+    public KeyCode right;
+    public KeyCode crouch;
+    public KeyCode sprint;
 
     // Camera
     public Transform cam;
