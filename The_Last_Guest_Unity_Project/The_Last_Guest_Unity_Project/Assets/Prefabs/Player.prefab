@@ -207,8 +207,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1940823764343454}
-  m_LocalRotation: {x: 0, y: 0.585078, z: 0, w: 0.81097704}
-  m_LocalPosition: {x: -7.38, y: 1.55, z: -14.268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1427104, y: 0.93, z: -1}
   m_LocalScale: {x: 1.29, y: 1.29, z: 1.29}
   m_Children:
   - {fileID: 4277130980526092}
@@ -634,7 +634,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 8
-  m_Range: 3.46
+  m_Range: 10.276428
   m_SpotAngle: 79
   m_CookieSize: 10
   m_Shadows:
@@ -673,8 +673,8 @@ MonoBehaviour:
   stun_gun_object: {fileID: 1416131851845964}
   flash_light_object: {fileID: 1207298017898726}
   ammunition_text: {fileID: 0}
-  fire_button: mouse 0
-  swap_button: mouse 1
+  fire_button: 0
+  swap_button: 0
   ammunition: 0
   target: {fileID: 4737568519547090}
   spawner: {fileID: 1699146892254284}
@@ -694,6 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickuptext: {fileID: 0}
+  interact_button: 0
   pickupdistance: 2
 --- !u!114 &114612565505521644
 MonoBehaviour:
@@ -707,12 +708,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54992575902447956}
-  up: w
-  down: s
-  left: a
-  right: d
-  crouch: c
-  sprint: v
+  up: 0
+  down: 0
+  left: 0
+  right: 0
+  crouch: 0
+  sprint: 0
   cam: {fileID: 4931748741288942}
   detector: {fileID: 1722585829925072}
   speedH: 2
@@ -754,9 +755,9 @@ MonoBehaviour:
     _serializedDocument: <component version="1.8" type="RAIN.Entities.EntityRig" reference="0"
       includecustomdata="False"><_visualMode>OnWhenSelected</_visualMode><_useUnityMessages>True</_useUnityMessages><_entity
       reference="1"><_entityName>Character Protoype 2</_entityName><_isActive>True</_isActive><_form
-      sceneobject="699546f0-07ac-40f4-8dc8-110e440e557d"></_form><_aspects><element0
-      type="RAIN.Entities.Aspects.VisualAspect" reference="2"><_showVisual>True</_showVisual><_aspectName>aPlayer</_aspectName><_isActive>True</_isActive><_aspectColor>0.6,0,0.6,1</_aspectColor><_outlineColorOffset>-0.5</_outlineColorOffset><_selectionColorOffset>0.4</_selectionColorOffset><_visualSize>0.1</_visualSize><_mountPoint
-      sceneobject="0727cbd0-ac50-4550-8d7f-12ff0dd128ba" component="0"></_mountPoint><_positionOffset>0,0,0</_positionOffset><_angleOffset>0,0,0</_angleOffset></element0></_aspects></_entity></component>
+      sceneobject=""></_form><_aspects><element0 type="RAIN.Entities.Aspects.VisualAspect"
+      reference="2"><_showVisual>True</_showVisual><_aspectName>aPlayer</_aspectName><_isActive>True</_isActive><_aspectColor>0.6,0,0.6,1</_aspectColor><_outlineColorOffset>-0.5</_outlineColorOffset><_selectionColorOffset>0.4</_selectionColorOffset><_visualSize>0.1</_visualSize><_mountPoint
+      sceneobject=""></_mountPoint><_positionOffset>0,0,0</_positionOffset><_angleOffset>0,0,0</_angleOffset></element0></_aspects></_entity></component>
     _serializedMetaDocument: <meta></meta>
     _serializedObjects: []
     _serializedCustomData: []
