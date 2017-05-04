@@ -10,6 +10,8 @@ public class Pickup_Script : MonoBehaviour
 
     public Text pickuptext;
 
+    public KeyCode interact_button;
+
     public float pickupdistance = 1.0f;
 
     //public HealthPickup pickup;
@@ -34,41 +36,12 @@ public class Pickup_Script : MonoBehaviour
 
             pickuptext.enabled = false;
 
-            if (hit.collider.CompareTag("pack") && distance < pickupdistance)
-            {
-                pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
-                {
-                    //Debug.Log("packs");
-                    hit.collider.SendMessage("Grab");
-                }
-            }
-
-            if (hit.collider.CompareTag("pick") && distance < pickupdistance)
-            {
-                pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
-                {
-                    //Debug.Log("Pressed");
-                    hit.collider.SendMessage("Heal");
-                }
-            }
-
-            if (hit.collider.CompareTag("ammo") && distance < pickupdistance)
-            {
-                pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
-                {
-                    hit.collider.SendMessage("Ammo");
-                }
-            }
-
             //Keypad
 
             if (hit.collider.CompareTag("one") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Onekey");
                 }
@@ -77,7 +50,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("two") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Twokey");
                 }
@@ -86,7 +59,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("three") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Threekey");
                 }
@@ -95,7 +68,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("four") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Fourkey");
                 }
@@ -104,7 +77,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("five") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Fivekey");
                 }
@@ -113,7 +86,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("six") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Sixkey");
                 }
@@ -122,7 +95,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("seven") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Sevenkey");
                 }
@@ -131,7 +104,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("eight") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Eightkey");
                 }
@@ -140,7 +113,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("nine") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Ninekey");
                 }
@@ -149,7 +122,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("zero") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Zerokey");
                 }
@@ -158,7 +131,7 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("clear") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Clearkey");
                 }
@@ -167,50 +140,21 @@ public class Pickup_Script : MonoBehaviour
             if (hit.collider.CompareTag("enter") && distance < pickupdistance)
             {
                 pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown(interact_button))
                 {
                     hit.collider.SendMessage("Enterkey");
                 }
             }
 
-            // Elevator
-
-            if (hit.collider.CompareTag("call") && distance < pickupdistance)
-            {
-                pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
-                {
-                    hit.collider.SendMessage("Call");
-                }
-            }
-
-            if (hit.collider.CompareTag("up") && distance < pickupdistance)
-            {
-                pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
-                {
-                    hit.collider.SendMessage("Above");
-                }
-            }
-
-            if (hit.collider.CompareTag("down") && distance < pickupdistance)
-            {
-                pickuptext.enabled = true;
-                if (Input.GetKeyDown("f"))
-                {
-                    hit.collider.SendMessage("Below");
-                }
-
                 // Big Arse Button
                 if (hit.collider.CompareTag("BAB") && distance < pickupdistance)
                 {
                     pickuptext.enabled = true;
-                    if (Input.GetKeyDown("f"))
+                    if (Input.GetKeyDown(interact_button))
                     {
                         hit.collider.SendMessage("Game_Over");
                     }
                 }
             }
-        }
     }
 }
