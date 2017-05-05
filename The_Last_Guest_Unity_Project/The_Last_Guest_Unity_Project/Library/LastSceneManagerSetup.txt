@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Main_Game/Level_One.unity
+- path: Assets/Scenes/Main_Game/Animatic_One.unity
   isLoaded: 1
   isActive: 1
