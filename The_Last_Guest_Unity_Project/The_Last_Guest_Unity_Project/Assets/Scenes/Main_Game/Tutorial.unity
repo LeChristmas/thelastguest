@@ -10866,6 +10866,11 @@ Prefab:
       propertyPath: m_Name
       value: Key_Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 114774223284329328, guid: a29155f89aca9d1438da02e15bc001eb,
+        type: 2}
+      propertyPath: levelname
+      value: Animatic_One
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29155f89aca9d1438da02e15bc001eb, type: 2}
   m_IsPrefabParent: 0
