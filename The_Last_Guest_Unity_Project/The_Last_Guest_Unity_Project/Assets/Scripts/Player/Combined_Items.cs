@@ -22,6 +22,8 @@ public class Combined_Items : MonoBehaviour {
 
     public Transform target;
 
+    public ParticleSystem stun_fire;
+
     private Renderer stun_gun_renderer;
     private Renderer flash_light_renderer;
 
@@ -156,6 +158,7 @@ public class Combined_Items : MonoBehaviour {
         {
             if(Time.time > nextFire)
             {
+                stun_fire.Play();
                 ammunition -= 40.0f;
                 nextFire = Time.time + firerate;
                 shots = Instantiate(shot, spawner.transform.position, spawner.transform.rotation);
