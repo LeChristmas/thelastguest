@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Main_Game/Tutorial.unity
+- path: Assets/Scenes/Prototypes/Prototype_Fifteen_Sprinting.unity
   isLoaded: 1
   isActive: 1
